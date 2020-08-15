@@ -12,9 +12,9 @@ pipeline
             {
 
             echo "anil"
-            sh "echo 'hey'"
-            sh "npm i"
-            sh "protractor conf.js"
+            bat "echo 'hey'"
+            bat "npm i"
+            bat "protractor conf.js"
 
 
             }
