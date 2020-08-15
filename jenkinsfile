@@ -12,6 +12,7 @@ pipeline
             {
 
             echo "anil"
+            sh "echo 'hey'"
             sh "npm i"
             sh "protractor conf.js"
 
