@@ -1,14 +1,16 @@
 node
 {
     agent any
-    stage('checkout')
+    stages
     {
-        steps
+        stage('checkou')
         {
+            steps
+            {
             git "https://github.com/vltdxchange/pipeline.git"
             mvn clean
             mvn compile
-            
+            }
         }
     }
 }
