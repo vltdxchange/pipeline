@@ -1,18 +1,20 @@
 
-pipeline{
-
 
 pipeline
 {
+
     agent any
     stages
     {
-        stage('checkou')
+        stage('checkout')
         {
             steps
             {
+
             git "https://github.com/vltdxchange/pipeline.git"
             sh "npm instal"
+
+
             }
         }
     }
