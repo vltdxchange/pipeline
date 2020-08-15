@@ -11,7 +11,7 @@ pipeline
             steps
             {
 
-         
+            echo "anil"
             sh "npm i"
             sh "protractor conf.js"
 
