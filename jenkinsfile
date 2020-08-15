@@ -8,6 +8,7 @@ node
             git "https://github.com/vltdxchange/pipeline.git"
             mvn clean
             mvn compile
+            
         }
     }
 }
