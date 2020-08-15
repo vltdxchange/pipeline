@@ -1,18 +1,15 @@
 
-import jenkins.model.*
-jenkins = Jenkins.instance
+
 node
 {
     agent any
     stages
     {
-        stage('checkou')
+        stage('checkout')
         {
             steps
             {
-            git "https://github.com/vltdxchange/pipeline.git"
-            mvn clean
-            mvn compile
+           checkout scm
             }
         }
     }
