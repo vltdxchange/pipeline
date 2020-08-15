@@ -1,7 +1,8 @@
 
-import jenkins.model.*
-jenkins = Jenkins.instance
-node
+pipeline{
+
+
+pipeline
 {
     agent any
     stages
@@ -11,8 +12,7 @@ node
             steps
             {
             git "https://github.com/vltdxchange/pipeline.git"
-            mvn clean
-            mvn compile
+            sh "npm instal"
             }
         }
     }
