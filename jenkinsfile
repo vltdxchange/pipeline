@@ -1,23 +1,36 @@
-
-
-pipeline
-{
-
-    agent any
-    stages
-    {
-        stage('checkout')
-        {
-            steps
-            {
-
-            echo "anil"
-            bat "echo 'hey'"
-            bat "npm i"
-            bat "protractor conf.js"
-
-
-            }
-        }
-    }
+pipeline {
+environment {
+registry = "14123/ubuntu-modified"
+registryCredential = 'DockerHub'
+dockerImage = ''
+}
+agent any
+stages {
+stage('Cloning our Git') {
+steps {
+git 'https://github.com/vltdxchange/pipeline.git'
+}
+}
+stage('Building our image') {
+steps{
+script {
+dockerImage = docker.build registry + ":$BUILD_NUMBER"
+}
+}
+}
+stage('Deploy our image') {
+steps{
+script {
+docker.withRegistry( '', DockerHub ) {
+dockerImage.push()
+}
+}
+}
+}
+stage('Cleaning up') {
+steps{
+sh "docker rmi $registry:$BUILD_NUMBER"
+}
+}
+}
 }
