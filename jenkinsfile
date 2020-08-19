@@ -4,9 +4,7 @@ registry = "14123/ubuntu-modified"
 registryCredential = 'DockerHub'
 dockerImage = ''
 }
-agent {
-    label 'docker' 
-  }
+agent any
 stages {
 stage('Cloning our Git') {
 steps {
