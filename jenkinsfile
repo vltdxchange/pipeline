@@ -15,7 +15,7 @@ stage('Building our image') {
 steps{
 script {
   
-docker login https://hub.docker.com/repository/docker/14123
+
 docker pull https://hub.docker.com/repository/docker/14123/ubuntu-modified
 }
 }
