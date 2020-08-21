@@ -1,20 +1,16 @@
 pipeline
 {
-    agent
-    {
-        docker
-        {
-            image 'ubuntu'
-        }
-    }
+    agent any
 
     stages
     {
-        stage("image")
+        stage("Build Image")
         {
             steps
             {
-                  sh 'ls'
+                  docker build -t myimage .
+                  docker run -t -d myimage
+                  def container=docker ps
             }
         
         }
