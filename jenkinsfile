@@ -16,7 +16,7 @@ steps{
 script {
   
 
-docker pull https://hub.docker.com/repository/docker/14123/ubuntu-modified
+docker pull 14123/ubuntu-modified
 }
 }
 }
