@@ -1,24 +1,23 @@
-pipeline {
-environment {
-registry = "14123/ubuntu-modified"
-registryCredential = 'DockerHub'
-dockerImage = ''
-}
-agent any
-stages {
-stage('Cloning our Git') {
-steps {
-git 'https://github.com/vltdxchange/pipeline.git'
-}
-}
-stage('Building our image') {
-steps{
-script {
-  
+pipeline
+{
+    agent
+    {
+        docker
+        {
+            image 'ubuntu'
+        }
+    }
 
-docker pull ubuntu
-}
-}
-}
-
+    stages
+    {
+        stage("image")
+        {
+            steps
+            {
+                  sh 'ls'
+            }
+        
+        }
+      
+    }
 }
