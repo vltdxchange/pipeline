@@ -1,24 +1,21 @@
 pipeline
 {
-   
-    agent 
+    agent
     {
-        docker{
-
-     
-        docker build -t myimage .
-        docker run -t -d myimage
-        container=docker ps
-           }
+        docker
+        {
+           docker build -t myimage .
+           docker run -t -d  myimage
+        }
     }
 
     stages
     {
-        stage("Build Image")
+        stage("image")
         {
             steps
             {
-                  echo 'hello'
+                  sh 'ls'
             }
         
         }
