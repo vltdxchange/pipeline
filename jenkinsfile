@@ -1,12 +1,11 @@
 pipeline
 {
-    agent
+    agent docker
     {
-        docker
-        {
+        
            docker build -t myimage .
            docker run -t -d  myimage
-        }
+        
     }
 
     stages
