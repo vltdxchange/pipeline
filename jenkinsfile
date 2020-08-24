@@ -3,6 +3,7 @@ pipeline
     agent 
     {
         dockerfile true
+        
     }
         
     
@@ -13,9 +14,9 @@ pipeline
         {
             steps
             {
-                  sh 'docker images'
+              sh 'ls'
+              sh 'pwd'
             }
-        
         }
       
     }

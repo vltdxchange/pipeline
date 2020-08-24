@@ -1,3 +1,11 @@
-FROM ubuntu:latest
-LABEL maintainer 14123
-RUN apt-get update
+FROM node:10-alpine
+
+RUN mkdir -p /home/node/pipeline
+
+WORKDIR /home/node/pipeline
+
+COPY * ./
+
+USER node
+
+RUN ls
