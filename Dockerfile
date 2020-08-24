@@ -4,7 +4,7 @@ RUN mkdir -p /home/node/pipeline
 
 WORKDIR /home/node/pipeline
 
-COPY * ./
+COPY / ./
 
 USER node
 
