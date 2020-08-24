@@ -14,4 +14,6 @@ RUN ls
 
 RUN  npm install
 
+RUN npx webdriver-manager update
+
 RUN npm test
