@@ -8,4 +8,6 @@ COPY / ./
 
 USER node
 
-RUN ls
+RUN npm install
+
+RUN npm test
