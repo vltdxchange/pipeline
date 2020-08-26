@@ -1,0 +1,24 @@
+pipeline
+{
+    agent 
+    {
+        dockerfile true
+        
+    }
+        
+    
+
+    stages
+    {
+        stage("image")
+        {
+            steps
+            {
+              sh 'ls'
+              sh 'pwd'
+			  echo "hello123"
+            }
+        }
+      
+    }
+}
