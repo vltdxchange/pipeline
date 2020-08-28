@@ -11,11 +11,13 @@ COPY / ./
 USER node
 
 RUN ls
-
+RUN apk add --nocache udev ttf-freefont chromium git
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
+ENV CHROMIUM_PATH /usr/bin/chromium-browser
 RUN  npm install
 
 RUN npx webdriver-manager update
 
-RUN docker-compose up
+
 
 RUN npm test

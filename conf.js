@@ -1,3 +1,4 @@
+const puppeteer = require('puppeteer');
 exports.config = {
   directConnect: true,
 
@@ -15,6 +16,10 @@ exports.config = {
   // They may include glob patterns.
   specs: ['../pipeline/src/specs/login*.js'],
   onPrepare: function () {
+	  puppeteer.launch({
+  executablePath: process.env.CHROMIUM_PATH,
+  args: ['--no-sandbox'], // This was important. Can't remember why
+});
     browser.ignoreSynchronization = true;
     browser.manage().deleteAllCookies();
     browser.manage().timeouts().pageLoadTimeout(50000);
