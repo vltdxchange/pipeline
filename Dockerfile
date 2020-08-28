@@ -16,4 +16,6 @@ RUN  npm install
 
 RUN npx webdriver-manager update
 
+RUN docker-compose up
+
 RUN npm test
