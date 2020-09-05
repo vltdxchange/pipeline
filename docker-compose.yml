@@ -23,3 +23,8 @@ seleniumhub:
       - 5900
     links:
       - seleniumhub:hub
+      
+      #To run scripts with nodes
+      #docker-compose up -d
+      #docker-compose scale chromenode=5
+      #docker-compose scale firefox=5
